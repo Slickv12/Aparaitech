@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
-import { motion } from "framer-motion";
 import PageHeader from "../components/PageHeader";
 import { useI18n } from '../i18n';
 import { emailService } from '../services/emailService';
@@ -47,7 +46,6 @@ const ApplyFormPage = () => {
     resume: null,
   });
 
-  const [jobs, setJobs] = useState([]);
   const [availableRoles, setAvailableRoles] = useState([]);
 
   const [errors, setErrors] = useState({});
@@ -63,8 +61,6 @@ const ApplyFormPage = () => {
 
         // ✅ depending on backend response structure
         const jobsFromApi = res.data.jobs || res.data;
-
-        setJobs(jobsFromApi);
 
         // ✅ unique roles (job titles)
         const roles = [...new Set(jobsFromApi.map((job) => job.title))];
@@ -96,7 +92,7 @@ const ApplyFormPage = () => {
 
     if (!formData.phone.trim()) newErrors.phone = "Phone number is required";
     else if (
-      !/^[\d\s\-\+\(\)]{10,}$/.test(formData.phone.replace(/\D/g, ""))
+      !/^(?:[+]?\d[\d\s()-]{9,})$/.test(formData.phone)
     )
       newErrors.phone = "Phone number is invalid";
 
@@ -213,7 +209,7 @@ const ApplyFormPage = () => {
 
         <div className="max-w-4xl mx-auto">
           {isSubmitted ? (
-            <motion.div
+            <div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               className="card p-8 text-center"
@@ -234,9 +230,9 @@ const ApplyFormPage = () => {
                   confirmation and next steps.
                 </p>
               </div>
-            </motion.div>
+            </div>
           ) : (
-            <motion.div
+            <div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -563,7 +559,7 @@ const ApplyFormPage = () => {
                   </p>
                 </div>
               </form>
-            </motion.div>
+            </div>
           )}
         </div>
       </div>

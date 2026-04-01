@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import HeroAnimated from '../components/HeroAnimated';
 import Timeline from '../components/Timeline';
 import { 
@@ -124,7 +123,7 @@ const HomePage = () => {
         
         <div className="relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <div className="text-center mb-12 sm:mb-16 md:mb-20">
-            <motion.div
+            <div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -132,7 +131,7 @@ const HomePage = () => {
             >
               <Target className="h-3 w-3 sm:h-4 sm:w-4 text-blue-600" />
               <span className="text-xs sm:text-sm font-semibold text-blue-700">Why Choose Us</span>
-            </motion.div>
+            </div>
             
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 sm:mb-6">
               Build Your Career <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">With Purpose</span>
@@ -145,7 +144,7 @@ const HomePage = () => {
           {/* Enhanced Stats */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16 md:mb-20">
             {stats.map((stat, index) => (
-              <motion.div
+              <div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -168,14 +167,14 @@ const HomePage = () => {
                   <div className="text-sm sm:text-base text-slate-600 font-medium">{stat.label}</div>
                   <div className="mt-2 sm:mt-4 h-0.5 sm:h-1 w-8 sm:w-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full"></div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
 
           {/* Enhanced Culture Items */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {cultureItems.map((item, index) => (
-              <motion.div
+              <div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -198,7 +197,7 @@ const HomePage = () => {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -211,7 +210,7 @@ const HomePage = () => {
         
         <div className="relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <div className="text-center mb-12 sm:mb-16 md:mb-20">
-            <motion.div
+            <div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -219,7 +218,7 @@ const HomePage = () => {
             >
               <Zap className="h-3 w-3 sm:h-4 sm:w-4 text-blue-600" />
               <span className="text-xs sm:text-sm font-semibold text-blue-700">Fast & Efficient</span>
-            </motion.div>
+            </div>
             
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 sm:mb-6">
               Streamlined <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Hiring Journey</span>
@@ -245,7 +244,7 @@ const HomePage = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
               {hiringProcess.map((step, index) => (
-                <motion.div
+                <div
                   key={step.step}
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -275,13 +274,13 @@ const HomePage = () => {
                       </div>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
 
           {/* CTA Section */}
-          <motion.div
+          <div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -293,7 +292,7 @@ const HomePage = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
+              <div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
                 <Link 
                   to="/apply" 
                   className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3.5 sm:px-8 sm:py-4 md:px-10 md:py-5 text-sm sm:text-base md:text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg sm:rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-blue-500/25"
@@ -301,9 +300,9 @@ const HomePage = () => {
                   Start Your Application
                   <Sparkles className="ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5" />
                 </Link>
-              </motion.div>
+              </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -316,7 +315,7 @@ const HomePage = () => {
         
         <div className="relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <div className="text-center mb-12 sm:mb-16 md:mb-20">
-            <motion.div
+            <div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -324,7 +323,7 @@ const HomePage = () => {
             >
               <Star className="h-3 w-3 sm:h-4 sm:w-4 text-blue-600" />
               <span className="text-xs sm:text-sm font-semibold text-blue-700">Team Stories</span>
-            </motion.div>
+            </div>
             
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 sm:mb-6">
               Valued <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Voices</span> From Our Team
@@ -336,7 +335,7 @@ const HomePage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             {testimonials.map((testimonial, index) => (
-              <motion.div
+              <div
                 key={testimonial.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -373,12 +372,12 @@ const HomePage = () => {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
 
           {/* Final CTA */}
-          <motion.div
+          <div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -393,7 +392,7 @@ const HomePage = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
+                <div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
                   <Link 
                     to="/apply" 
                     className="group inline-flex items-center justify-center w-full sm:w-auto px-6 py-3.5 sm:px-8 sm:py-4 md:px-10 md:py-5 text-sm sm:text-base md:text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg sm:rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-blue-500/25"
@@ -401,9 +400,9 @@ const HomePage = () => {
                     <span>Start Your Journey</span>
                     <Rocket className="ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
-                </motion.div>
+                </div>
                 
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
+                <div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
                   <Link 
                     to="/contact" 
                     className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3.5 sm:px-8 sm:py-4 md:px-10 md:py-5 text-sm sm:text-base md:text-lg font-semibold text-slate-900 bg-white border border-slate-300 rounded-lg sm:rounded-xl hover:border-blue-300 hover:shadow-md sm:hover:shadow-lg transition-all duration-300"
@@ -411,10 +410,10 @@ const HomePage = () => {
                     <span>Talk to Recruiter</span>
                     <MessageSquare className="ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5" />
                   </Link>
-                </motion.div>
+                </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>

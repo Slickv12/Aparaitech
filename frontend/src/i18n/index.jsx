@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useMemo, useState } from 'react';
+/* eslint-disable react-refresh/only-export-components */
+import React, { createContext, useContext, useState } from 'react';
 import en from './en.json';
 import hi from './hi.json';
 import es from './es.json';
@@ -10,12 +11,9 @@ const getNested = (obj, path) => path.split('.').reduce((acc, key) => (acc ? acc
 
 export const I18nProvider = ({ children }) => {
   const [language, setLanguage] = useState('en');
-
   const t = (key) => getNested(dictionaries[language], key) || getNested(dictionaries.en, key) || key;
 
-  const value = useMemo(() => ({ language, setLanguage, t }), [language]);
-
-  return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;
+  return <I18nContext.Provider value={{ language, setLanguage, t }}>{children}</I18nContext.Provider>;
 };
 
 export const useI18n = () => {

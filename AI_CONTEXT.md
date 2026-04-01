@@ -460,11 +460,12 @@ Project Root
 - **Multi-language Support (lightweight local i18n)**: Added `frontend/src/i18n/*` with EN/HI/ES dictionaries and `LanguageSwitcher`.
 
 ### Integration touchpoints
-- `App.jsx` now includes chatbot globally and route `/dashboard`.
+- `App.jsx` now includes chatbot globally and routes `/dashboard` and `/referrals`.
 - `Navbar` includes dashboard link, language switching, and notification bell.
 - `OpenPositionsPage` includes AI suggestion preview and notification trigger.
 - `ApplyFormPage` triggers demo email rendering + local notification on successful submit.
 
 ### Notes
 - This iteration is intentionally **frontend-first/demo-first** with mock/local data and client-only services.
+- Final polish pass: frontend lint and production build are currently passing in local validation.
 - External package installation for `i18next/react-i18next/recharts` was blocked by registry access policy; equivalent modular local implementations were added to preserve roadmap continuity.

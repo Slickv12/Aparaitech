@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Rocket, Users, Globe, Sparkles } from 'lucide-react';
 import timelineData from '../data/companyTimeline.json';
 
@@ -12,7 +11,7 @@ const Timeline = () => (
       {timelineData.map((item, index) => {
         const Icon = iconMap[item.icon] || Rocket;
         return (
-          <motion.div
+          <div
             key={item.title}
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -26,7 +25,7 @@ const Timeline = () => (
             <p className="text-sm text-blue-600 font-semibold">{item.date}</p>
             <h3 className="text-xl font-bold mt-1">{item.title}</h3>
             <p className="text-gray-600 mt-2">{item.description}</p>
-          </motion.div>
+          </div>
         );
       })}
     </div>

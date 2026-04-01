@@ -4,12 +4,11 @@ import { getNotifications, markNotificationAsRead, requestNotificationPermission
 
 const NotificationBell = () => {
   const [open, setOpen] = useState(false);
-  const [notifications, setNotifications] = useState([]);
+  const [notifications, setNotifications] = useState(() => getNotifications());
 
   const refresh = () => setNotifications(getNotifications());
 
   useEffect(() => {
-    refresh();
     requestNotificationPermission();
     window.addEventListener('aparaitech:notifications-updated', refresh);
     return () => window.removeEventListener('aparaitech:notifications-updated', refresh);

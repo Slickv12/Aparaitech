@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage';
 import OpenPositionsPage from './pages/OpenPositionsPage';
 import ApplyFormPage from './pages/ApplyFormPage';
 import Dashboard from './pages/dashboard/Dashboard';
+import ReferralsPage from './pages/ReferralsPage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/positions" element={<OpenPositionsPage />} />
             <Route path="/apply" element={<ApplyFormPage />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/referrals" element={<ReferralsPage />} />
           </Routes>
         </main>
         <Footer />
