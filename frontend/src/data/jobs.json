@@ -1,0 +1,6 @@
+[
+  {"id":"j1","title":"Senior Frontend Developer","department":"Engineering","type":"Full-time","location":"Remote","techStack":["react","javascript","tailwind","vite"],"popularityScore":0.9,"recencyScore":0.8},
+  {"id":"j2","title":"Backend Engineer","department":"Engineering","type":"Full-time","location":"Hybrid","techStack":["node.js","express","mongodb","docker"],"popularityScore":0.7,"recencyScore":0.7},
+  {"id":"j3","title":"UI/UX Designer","department":"Design","type":"Full-time","location":"On-site","techStack":["figma","prototyping","design systems"],"popularityScore":0.6,"recencyScore":0.5},
+  {"id":"j4","title":"Software Engineering Intern","department":"Engineering","type":"Internship","location":"Remote","techStack":["javascript","python","react"],"popularityScore":0.8,"recencyScore":1}
+]

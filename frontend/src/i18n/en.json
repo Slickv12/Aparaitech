@@ -1,0 +1,6 @@
+{
+  "nav": {"home": "Home", "openRoles": "Open Roles", "apply": "Apply", "dashboard": "Dashboard", "notifications": "Notifications"},
+  "footer": {"quickLinks": "Quick Links", "contact": "Contact Us", "follow": "Follow Us"},
+  "jobs": {"title": "Open Positions", "subtitle": "Find your perfect role and join our team of innovators"},
+  "apply": {"title": "Apply Now", "subtitle": "Submit your application to join our team of innovators"}
+}

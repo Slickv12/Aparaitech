@@ -5,8 +5,13 @@ import FilterBar from "../components/FilterBar";
 import JobCard from "../components/JobCard";
 import PageHeader from "../components/PageHeader";
 import { Briefcase } from "lucide-react";
+import { useI18n } from '../i18n';
+import { recommendJobs } from '../ai/jobRecommendation';
+import jobsMock from '../data/jobs.json';
+import { pushLocalNotification } from '../services/notificationService';
 
 const OpenPositionsPage = () => {
+  const { t } = useI18n();
   const [jobs, setJobs] = useState([]); // ✅ all jobs from backend
   const [filteredJobs, setFilteredJobs] = useState([]); // ✅ filtered jobs
   const [filters, setFilters] = useState({
@@ -30,6 +35,7 @@ const OpenPositionsPage = () => {
 
         setJobs(jobsFromApi);
         setFilteredJobs(jobsFromApi);
+        if (jobsFromApi.length) pushLocalNotification('New jobs loaded', `${jobsFromApi.length} roles are available now.`);
       } catch (error) {
         console.log("❌ Failed to fetch jobs:", error);
       }
@@ -95,14 +101,16 @@ const OpenPositionsPage = () => {
     setFilteredJobs(result);
   }, [filters, jobs]);
 
+
+  const recommendedPreview = recommendJobs({ userSkills: ['react', 'node.js'], userInterests: ['engineering'], viewedJobs: [] }, jobsMock, 2);
   const jobCount = filteredJobs.length;
 
   return (
     <div className="min-h-screen">
       <div className="section-padding py-8">
         <PageHeader
-          title="Open Positions"
-          subtitle="Find your perfect role and join our team of innovators"
+          title={t('jobs.title')}
+          subtitle={t('jobs.subtitle')}
         >
           <div className="flex items-center space-x-2 text-gray-600 mt-4">
             <Briefcase className="h-5 w-5" />
@@ -113,6 +121,17 @@ const OpenPositionsPage = () => {
         </PageHeader>
 
         <FilterBar onFilterChange={handleFilterChange} />
+
+        <div className="card p-4 mb-6">
+          <h3 className="font-semibold mb-2">AI Suggestions</h3>
+          <div className="grid sm:grid-cols-2 gap-2">
+            {recommendedPreview.map((r) => (
+              <div key={r.job.id} className="bg-blue-50 text-sm rounded-lg px-3 py-2 flex justify-between">
+                <span>{r.job.title}</span><span className="text-blue-700 font-semibold">{r.score}</span>
+              </div>
+            ))}
+          </div>
+        </div>
 
         {filteredJobs.length > 0 ? (
           <motion.div
