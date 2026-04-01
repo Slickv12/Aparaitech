@@ -13,7 +13,7 @@ const floating = {
 };
 
 const HeroAnimated = () => (
-  <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 p-8 md:p-16 text-white">
+  <section id="hero" className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 p-8 md:p-16 text-white">
     <div className="absolute -top-16 -left-16 h-44 w-44 rounded-full bg-cyan-400/20 blur-3xl" {...floating} />
     <div className="absolute -bottom-10 right-10 h-36 w-36 rounded-full bg-fuchsia-400/20 blur-3xl" {...floating} transition={{ ...floating.transition, duration: 10 }} />
 

@@ -49,6 +49,16 @@ const Footer = () => {
                                     Apply Now
                                 </Link>
                             </li>
+                            <li>
+                                <a href="/#timeline" className="text-gray-400 hover:text-white transition-colors duration-200">
+                                    Company Timeline
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#chatbot-assistant" className="text-gray-400 hover:text-white transition-colors duration-200">
+                                    Contact Chatbot
+                                </a>
+                            </li>
                         </ul>
                     </div>
 

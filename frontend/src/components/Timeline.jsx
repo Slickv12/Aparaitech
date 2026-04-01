@@ -5,7 +5,7 @@ import timelineData from '../data/companyTimeline.json';
 const iconMap = { Rocket, Users, Globe, Sparkles };
 
 const Timeline = () => (
-  <section className="section-padding py-14">
+  <section id="timeline" className="section-padding py-14">
     <h2 className="text-3xl font-bold mb-8">Company Roadmap</h2>
     <div className="relative border-l-2 border-blue-200 pl-6 space-y-8">
       {timelineData.map((item, index) => {

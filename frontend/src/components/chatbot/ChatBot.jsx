@@ -27,7 +27,7 @@ const ChatBot = () => {
   const buttonIcon = useMemo(() => (open ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />), [open]);
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div id="chatbot-assistant" className="fixed bottom-6 right-6 z-50">
       {open && <div className="mb-3"><ChatWindow messages={messages} onSend={onSend} /></div>}
       <button onClick={() => setOpen((v) => !v)} className="rounded-full bg-blue-600 text-white p-4 shadow-lg hover:bg-blue-700" aria-label="Toggle chatbot">
         {buttonIcon}

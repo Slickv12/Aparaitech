@@ -18,6 +18,7 @@ const Navbar = () => {
     { name: t('nav.apply'), path: '/apply' },
     { name: t('nav.dashboard'), path: '/dashboard' },
     { name: 'Referrals', path: '/referrals' },
+    { name: 'AI Demo', path: '/ai-demo' },
   ];
 
   useEffect(() => {
