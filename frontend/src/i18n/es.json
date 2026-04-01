@@ -1,0 +1,6 @@
+{
+  "nav": {"home": "Inicio", "openRoles": "Vacantes", "apply": "Aplicar", "dashboard": "Panel", "notifications": "Notificaciones"},
+  "footer": {"quickLinks": "Enlaces rápidos", "contact": "Contáctanos", "follow": "Síguenos"},
+  "jobs": {"title": "Puestos Abiertos", "subtitle": "Encuentra tu rol ideal y únete a nuestro equipo"},
+  "apply": {"title": "Aplica Ahora", "subtitle": "Envía tu solicitud para unirte a nuestro equipo"}
+}

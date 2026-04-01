@@ -1,10 +1,12 @@
 import React from 'react';
+import { useI18n } from '../i18n';
 import { Link } from 'react-router-dom';
 import { Building2, Mail, MapPin, Phone, Linkedin, Instagram, Youtube } from 'lucide-react';
 import ALogo from "../assets/ALogo.png";
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
+    const { t } = useI18n();
 
     return (
         <footer className="bg-gray-900 text-white mt-auto">
@@ -28,9 +30,9 @@ const Footer = () => {
                         </p>
                     </div>
 
-                    {/* Quick Links */}
+                    {/* {t('footer.quickLinks')} */}
                     <div>
-                        <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
+                        <h3 className="text-lg font-semibold mb-6">{t('footer.quickLinks')}</h3>
                         <ul className="space-y-3">
                             <li>
                                 <Link to="/" className="text-gray-400 hover:text-white transition-colors duration-200">
@@ -47,12 +49,22 @@ const Footer = () => {
                                     Apply Now
                                 </Link>
                             </li>
+                            <li>
+                                <a href="/#timeline" className="text-gray-400 hover:text-white transition-colors duration-200">
+                                    Company Timeline
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#chatbot-assistant" className="text-gray-400 hover:text-white transition-colors duration-200">
+                                    Contact Chatbot
+                                </a>
+                            </li>
                         </ul>
                     </div>
 
                     {/* Contact Info */}
                     <div>
-                        <h3 className="text-lg font-semibold mb-6">Contact Us</h3>
+                        <h3 className="text-lg font-semibold mb-6">{t('footer.contact')}</h3>
                         <ul className="space-y-4">
                             <li className="flex items-start space-x-3">
                                 <MapPin className="h-5 w-5 text-gray-400 mt-1" />
@@ -73,7 +85,7 @@ const Footer = () => {
 
                     {/* Social Links */}
                     <div>
-                        <h3 className="text-lg font-semibold mb-6">Follow Us</h3>
+                        <h3 className="text-lg font-semibold mb-6">{t('footer.follow')}</h3>
                         <div className="flex space-x-4">
                             <a
                                 href="https://www.linkedin.com/company/aparaitech/posts/?feedView=all"

@@ -1,0 +1,19 @@
+{
+  "stats": [
+    {"label":"Total Applications","value":"1,284","trend":"+12%"},
+    {"label":"Open Positions","value":"24","trend":"+3"},
+    {"label":"Interview Rate","value":"36%","trend":"+4%"},
+    {"label":"Referral Conversion","value":"18%","trend":"+2%"}
+  ],
+  "applicationsByMonth": [
+    {"month":"Jan","value":120},{"month":"Feb","value":150},{"month":"Mar","value":210},{"month":"Apr","value":240},{"month":"May","value":190},{"month":"Jun","value":230}
+  ],
+  "categoryDistribution": [
+    {"category":"Engineering","value":55},{"category":"Design","value":15},{"category":"QA","value":12},{"category":"Product","value":18}
+  ],
+  "activity": [
+    {"time":"2m ago","text":"New Backend Engineer role posted"},
+    {"time":"15m ago","text":"Interview scheduled for Frontend candidate"},
+    {"time":"1h ago","text":"Referral application received"}
+  ]
+}

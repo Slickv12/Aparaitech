@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import HeroAnimated from '../components/HeroAnimated';
+import Timeline from '../components/Timeline';
 import { 
   Users, 
   Rocket, 
@@ -105,106 +106,13 @@ const HomePage = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section - Enhanced */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900">
-        {/* Animated background elements */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-500/10 via-transparent to-transparent"></div>
-        <div className="absolute top-20 left-1/4 w-64 h-64 md:w-96 md:h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-1/4 w-64 h-64 md:w-96 md:h-96 bg-indigo-500/5 rounded-full blur-3xl"></div>
-        
-        {/* Grid overlay - Fixed */}
-        <div className="absolute inset-0 opacity-[0.02]" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23ffffff' fillOpacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          backgroundSize: '30px 30px'
-        }}></div>
-        
-        <div className="relative px-4 sm:px-6 lg:px-8 py-20 md:py-32">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-6xl mx-auto text-center"
-          >
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-blue-500/10 to-indigo-500/10 border border-white/10 backdrop-blur-sm mb-6 sm:mb-8"
-            >
-              <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-blue-400" />
-              <span className="text-xs sm:text-sm font-semibold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                We're Hiring Top Talent
-              </span>
-            </motion.div>
+      {/* Phase 2: Animated Hero */}
+      <div className="section-padding py-8">
+        <HeroAnimated />
+      </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 sm:mb-8 tracking-tight">
-              Shape the Future at{' '}
-              <span className="relative">
-                <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-indigo-400 bg-clip-text text-transparent">
-                  Aparaitech
-                </span>
-                <div className="absolute -bottom-1 sm:-bottom-2 left-0 right-0 h-0.5 sm:h-1 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full"></div>
-              </span>
-            </h1>
-            
-            <p className="text-base sm:text-lg md:text-xl text-slate-300 mb-8 sm:mb-12 max-w-3xl mx-auto px-4 leading-relaxed">
-              Build groundbreaking enterprise solutions with cutting-edge technology. 
-              Your career, accelerated by innovation and meaningful impact.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
-                <Link 
-                  to="/positions" 
-                  className="group relative inline-flex items-center justify-center w-full sm:w-auto px-6 py-3.5 sm:px-8 sm:py-4 text-sm sm:text-base font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg sm:rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-blue-500/25"
-                >
-                  <span>Explore Opportunities</span>
-                  <ChevronRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </motion.div>
-              
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
-                <Link 
-                  to="/apply" 
-                  className="group inline-flex items-center justify-center w-full sm:w-auto px-6 py-3.5 sm:px-8 sm:py-4 text-sm sm:text-base font-semibold text-white bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg sm:rounded-xl hover:bg-white/15 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-white/5"
-                >
-                  <span>Apply Now</span>
-                  <Sparkles className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:rotate-12 transition-transform" />
-                </Link>
-              </motion.div>
-            </div>
-            
-            {/* Trust indicators */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-              className="mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-white/10 px-4"
-            >
-              <p className="text-sm sm:text-base text-slate-400 mb-4 sm:mb-6">Trusted by industry leaders worldwide</p>
-              <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-12 opacity-70">
-                <div className="text-lg sm:text-xl md:text-2xl font-bold text-white/40">Google</div>
-                <div className="text-lg sm:text-xl md:text-2xl font-bold text-white/40">Microsoft</div>
-                <div className="text-lg sm:text-xl md:text-2xl font-bold text-white/40">Amazon</div>
-                <div className="text-lg sm:text-xl md:text-2xl font-bold text-white/40">Stripe</div>
-                <div className="text-lg sm:text-xl md:text-2xl font-bold text-white/40">Salesforce</div>
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
-        
-        {/* Scroll indicator */}
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-          className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-white/30 rounded-full flex justify-center">
-            <div className="w-1 h-2 sm:h-3 bg-gradient-to-b from-blue-400 to-indigo-400 rounded-full mt-2"></div>
-          </div>
-        </motion.div>
-      </section>
+      {/* Phase 3: Interactive Timeline */}
+      <Timeline />
 
       {/* Why Join Us - Enhanced */}
       <section className="relative py-16 sm:py-20 md:py-24 bg-gradient-to-b from-white to-slate-50">
@@ -215,7 +123,7 @@ const HomePage = () => {
         
         <div className="relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <div className="text-center mb-12 sm:mb-16 md:mb-20">
-            <motion.div
+            <div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -223,7 +131,7 @@ const HomePage = () => {
             >
               <Target className="h-3 w-3 sm:h-4 sm:w-4 text-blue-600" />
               <span className="text-xs sm:text-sm font-semibold text-blue-700">Why Choose Us</span>
-            </motion.div>
+            </div>
             
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 sm:mb-6">
               Build Your Career <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">With Purpose</span>
@@ -236,7 +144,7 @@ const HomePage = () => {
           {/* Enhanced Stats */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16 md:mb-20">
             {stats.map((stat, index) => (
-              <motion.div
+              <div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -259,14 +167,14 @@ const HomePage = () => {
                   <div className="text-sm sm:text-base text-slate-600 font-medium">{stat.label}</div>
                   <div className="mt-2 sm:mt-4 h-0.5 sm:h-1 w-8 sm:w-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full"></div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
 
           {/* Enhanced Culture Items */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {cultureItems.map((item, index) => (
-              <motion.div
+              <div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -289,7 +197,7 @@ const HomePage = () => {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -302,7 +210,7 @@ const HomePage = () => {
         
         <div className="relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <div className="text-center mb-12 sm:mb-16 md:mb-20">
-            <motion.div
+            <div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -310,7 +218,7 @@ const HomePage = () => {
             >
               <Zap className="h-3 w-3 sm:h-4 sm:w-4 text-blue-600" />
               <span className="text-xs sm:text-sm font-semibold text-blue-700">Fast & Efficient</span>
-            </motion.div>
+            </div>
             
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 sm:mb-6">
               Streamlined <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Hiring Journey</span>
@@ -336,7 +244,7 @@ const HomePage = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
               {hiringProcess.map((step, index) => (
-                <motion.div
+                <div
                   key={step.step}
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -366,13 +274,13 @@ const HomePage = () => {
                       </div>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
 
           {/* CTA Section */}
-          <motion.div
+          <div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -384,7 +292,7 @@ const HomePage = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
+              <div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
                 <Link 
                   to="/apply" 
                   className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3.5 sm:px-8 sm:py-4 md:px-10 md:py-5 text-sm sm:text-base md:text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg sm:rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-blue-500/25"
@@ -392,9 +300,9 @@ const HomePage = () => {
                   Start Your Application
                   <Sparkles className="ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5" />
                 </Link>
-              </motion.div>
+              </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -407,7 +315,7 @@ const HomePage = () => {
         
         <div className="relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <div className="text-center mb-12 sm:mb-16 md:mb-20">
-            <motion.div
+            <div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -415,7 +323,7 @@ const HomePage = () => {
             >
               <Star className="h-3 w-3 sm:h-4 sm:w-4 text-blue-600" />
               <span className="text-xs sm:text-sm font-semibold text-blue-700">Team Stories</span>
-            </motion.div>
+            </div>
             
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 sm:mb-6">
               Valued <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Voices</span> From Our Team
@@ -427,7 +335,7 @@ const HomePage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             {testimonials.map((testimonial, index) => (
-              <motion.div
+              <div
                 key={testimonial.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -464,12 +372,12 @@ const HomePage = () => {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
 
           {/* Final CTA */}
-          <motion.div
+          <div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -484,7 +392,7 @@ const HomePage = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
+                <div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
                   <Link 
                     to="/apply" 
                     className="group inline-flex items-center justify-center w-full sm:w-auto px-6 py-3.5 sm:px-8 sm:py-4 md:px-10 md:py-5 text-sm sm:text-base md:text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg sm:rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-blue-500/25"
@@ -492,9 +400,9 @@ const HomePage = () => {
                     <span>Start Your Journey</span>
                     <Rocket className="ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
-                </motion.div>
+                </div>
                 
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
+                <div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
                   <Link 
                     to="/contact" 
                     className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3.5 sm:px-8 sm:py-4 md:px-10 md:py-5 text-sm sm:text-base md:text-lg font-semibold text-slate-900 bg-white border border-slate-300 rounded-lg sm:rounded-xl hover:border-blue-300 hover:shadow-md sm:hover:shadow-lg transition-all duration-300"
@@ -502,10 +410,10 @@ const HomePage = () => {
                     <span>Talk to Recruiter</span>
                     <MessageSquare className="ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5" />
                   </Link>
-                </motion.div>
+                </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>
